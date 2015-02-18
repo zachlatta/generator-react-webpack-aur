@@ -7,7 +7,7 @@ pkgdesc="Yeoman generator for ReactJS and Webpack"
 arch=(any)
 url="https://github.com/newtriks/generator-react-webpack"
 license=(MIT)
-depends=('nodejs')
+depends=('nodejs' 'nodejs-yeoman')
 optdepends=()
 source=(http://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz)
 noextract=($_npmname-$_npmver.tgz)
@@ -19,6 +19,8 @@ package() {
   mkdir -p $_npmdir
   cd $_npmdir
   npm install -g --prefix "$pkgdir/usr" $_npmname@$_npmver
+  rm -rf "$pkgdir"/usr/bin
+  rm -rf "$pkgdir"/usr/lib/node_modules/{bower,yo}
 }
 
 # vim:set ts=2 sw=2 et:
