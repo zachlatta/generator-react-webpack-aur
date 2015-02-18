@@ -20,7 +20,7 @@ package() {
   cd $_npmdir
   npm install -g --prefix "$pkgdir/usr" $_npmname@$_npmver
   rm -rf "$pkgdir"/usr/bin
-  rm -rf "$pkgdir"/usr/lib/node_modules/{bower,yo}
+  rm -rf "$pkgdir"/usr/lib/node_modules/yo
 }
 
 # vim:set ts=2 sw=2 et:
